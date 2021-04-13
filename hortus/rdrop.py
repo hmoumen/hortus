@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 
-class rain:
+class rdrop:
 	def __init__(self, gpio):
 		self.gpio = gpio
 		print('Initialisation du capteur de pluie/arrosage GPIO : {}'.format(self.gpio))

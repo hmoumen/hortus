@@ -5,6 +5,7 @@ import time
 from datetime import datetime
 import sys
 import datetime
+import hortus
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -32,10 +33,10 @@ def main():
 		relay1.off()
 if __name__ == "__main__":
 
-	relay1 = relay(25)
-	relay2 = relay(8)
-	relay3 = relay(5)
-	relay4 = relay(6)
+	relay1 = relay(22)
+	relay2 = relay(23)
+	relay3 = relay(24)
+	relay4 = relay(25)
 
 	ultrasonic1 = ultrasonic(14, 15)
 	
