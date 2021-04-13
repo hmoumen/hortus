@@ -2,7 +2,7 @@
 
 class tank:
 	def __init__(self, depth):
-		print('Initialisation de la Gestion Technique centralisée')
+		print('Irrigation water management initialization')
 		time.sleep(0.5)
 
 	def cleanup(self):
@@ -42,7 +42,7 @@ class tank:
 			GPIO.setup(self.gpio_trigger,GPIO.OUT)
 			GPIO.setup(self.gpio_echo,GPIO.IN)
 
-		def instant_depth(self):
+		def get_depth(self):
 			GPIO.output(self.gpio_trigger, GPIO.LOW)
 			time.sleep(0.5)
 			GPIO.output(self.gpio_trigger, GPIO.HIGH) # set TRIGGER to HIGH
@@ -62,7 +62,7 @@ class tank:
 			depth = distanceBothWays / 2
 			return depth
 
-		def average_depth(self):
+		def get_avgdepth(self):
 			i = 0
 			depth_sum = 0
 			depth = 0
@@ -90,25 +90,10 @@ class tank:
 			average_depth = (depth_sum / i)
 			return depth
 
-		def check_tank(self):
-			depth_per = 100 - ((self.average_depth() / 150) * 100)
+		def get_percdepth(self):
+			depth_per = 100 - ((self.get_avgdepth() / 150) * 100)
 			if (depth_per > 20):
 				#print("Reservoir d'eau rempli à {} %".format(depth_per))
-				return True
-			else:
-				return False
-
-	class rain:
-		def __init__(self, gpio):
-			self.gpio = gpio
-			print('\t*Init : capteur de pluie/arrosage GPIO : {}'.format(self.gpio))
-			GPIO.setup(self.gpio, GPIO.IN)
-		
-		def status(self):
-			return GPIO.input(self.gpio)
-			
-		def check_rain(self):
-			if (self.status() == 1):
 				return True
 			else:
 				return False
