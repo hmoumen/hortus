@@ -31,12 +31,13 @@ def main():
 		sys.stdout.flush()
 if __name__ == "__main__":
 	tank1 = tank(200)
-	relay1 = tank1.relay(22)
-	relay2 = tank1.relay(23)
-	relay3 = tank1.relay(24)
-	relay4 = tank1.relay(25)
+	relay1 = relay(22)
+	relay2 = relay(23)
+	relay3 = relay(24)
+	relay4 = relay(25)
 
 	relay1.test()
+	relay2.test()
 	#ultrasonic1 = ultrasonic(14, 15)
 	
 	#rain1 = rain(17)
