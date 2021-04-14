@@ -1,4 +1,5 @@
 #-*- coding: utf-8 -*-
+import time
 
 class tank:
 	def __init__(self, depth):
