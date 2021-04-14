@@ -17,7 +17,7 @@ watering_hour = "02:43 PM"
 
 def main():
 	now = datetime.datetime.now().strftime("%I:%M %p")
-	if (check_all() and now == watering_hour):
+	if (now == watering_hour):
 		stop_time = time.time() + 60
 		relay1.on()
 		counter = 0
@@ -33,8 +33,8 @@ def main():
 		relay1.off()
 if __name__ == "__main__":
 	tank1 = tank(200)
-	relay1 = tank1.relay(22)
-	relay2 = tank1.relay(23)
+	relay1 = tank1.relay(22).test()
+	relay2 = tank1.relay(23).test()
 	relay3 = tank1.relay(24)
 	relay4 = tank1.relay(25)
 
