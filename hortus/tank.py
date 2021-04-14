@@ -4,7 +4,7 @@ import RPi.GPIO as GPIO
 
 class tank:
 	def __init__(self, depth):
-		print('Irrigation water management initialization')
+		print('Irrigation Water Management initialization')
 		time.sleep(0.5)
 
 	def cleanup(self):
