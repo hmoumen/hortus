@@ -5,7 +5,7 @@ import time
 from datetime import datetime
 import sys
 import datetime
-from hortus.tank import *
+from hortus.relay import *
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -30,7 +30,6 @@ def main():
 		sys.stdout.write("\r" + "\t{} - En attente...".format(datetime.datetime.now().strftime("%I:%M:%S %p")))
 		sys.stdout.flush()
 if __name__ == "__main__":
-	tank1 = tank(200)
 	relay1 = relay(22)
 	relay2 = relay(23)
 	relay3 = relay(24)
