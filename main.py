@@ -32,16 +32,16 @@ def main():
 		sys.stdout.flush()
 		relay1.off()
 if __name__ == "__main__":
+	tank1 = hortus.tank(200)
+	relay1 = tank1.relay(22)
+	relay2 = tank1.relay(23)
+	relay3 = tank1.relay(24)
+	relay4 = tank1.relay(25)
 
-	relay1 = relay(22)
-	relay2 = relay(23)
-	relay3 = relay(24)
-	relay4 = relay(25)
-
-	ultrasonic1 = ultrasonic(14, 15)
+	#ultrasonic1 = ultrasonic(14, 15)
 	
-	rain1 = rain(17)
-	rain2 = rain(27)
+	#rain1 = rain(17)
+	#rain2 = rain(27)
 	
 	while True :
 		main()
