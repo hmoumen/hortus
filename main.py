@@ -26,18 +26,17 @@ def main():
 			sys.stdout.write("\r" + "{}\t - Arrosage en cours...".format(datetime.datetime.now().strftime("%I:%M:%S %p")))
 			sys.stdout.flush()
 			time.sleep(1)
-		relay1.off()	
 	else:
 		sys.stdout.write("\r" + "\t{} - En attente...".format(datetime.datetime.now().strftime("%I:%M:%S %p")))
 		sys.stdout.flush()
-		relay1.off()
 if __name__ == "__main__":
 	tank1 = tank(200)
-	relay1 = tank1.relay(22).test()
-	relay2 = tank1.relay(23).test()
+	relay1 = tank1.relay(22)
+	relay2 = tank1.relay(23)
 	relay3 = tank1.relay(24)
 	relay4 = tank1.relay(25)
 
+	relay1.test()
 	#ultrasonic1 = ultrasonic(14, 15)
 	
 	#rain1 = rain(17)
