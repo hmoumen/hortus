@@ -1,5 +1,6 @@
 #-*- coding: utf-8 -*-
 import time
+import RPi.GPIO as GPIO
 
 class tank:
 	def __init__(self, depth):

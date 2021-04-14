@@ -5,7 +5,7 @@ import time
 from datetime import datetime
 import sys
 import datetime
-import hortus
+from hortus.tank import *
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -32,7 +32,7 @@ def main():
 		sys.stdout.flush()
 		relay1.off()
 if __name__ == "__main__":
-	tank1 = hortus.tank(200)
+	tank1 = tank(200)
 	relay1 = tank1.relay(22)
 	relay2 = tank1.relay(23)
 	relay3 = tank1.relay(24)
