@@ -50,8 +50,6 @@ if __name__ == "__main__":
         version=VERSION,
         download_url=DOWNLOAD_URL,
         python_requires=PYTHON_REQUIRES,
-        install_requires=INSTALL_REQUIRES,
-        extras_require=EXTRAS_REQUIRE,
         packages=PACKAGES,
         classifiers=CLASSIFIERS
     )
