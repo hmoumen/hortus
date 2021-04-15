@@ -1,4 +1,5 @@
 #-*- coding: utf-8 -*-
+import RPi.GPIO as GPIO 
 
 class rgauge:
 	def __init__(self, gpio):

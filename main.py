@@ -6,6 +6,7 @@ from datetime import datetime
 import sys
 import datetime
 from hortus.relay import *
+from hortus.dht import *
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)

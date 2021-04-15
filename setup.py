@@ -10,21 +10,12 @@ Here is some of the functionality that hortus offers:
 
 DISTNAME = 'hortus'
 MAINTAINER = 'Hakim Moumen'
-URL = 'https://hortus.org'
+URL = 'https://github.com/hmoumen/hortus/'
 LICENSE = 'Apache 2.0'
 DOWNLOAD_URL = 'https://github.com/hmoumen/hortus/'
 VERSION = '0.1'
 PYTHON_REQUIRES = ">=3.7"
 
-INSTALL_REQUIRES = [
-    
-]
-
-EXTRAS_REQUIRE = {
-    'all': [
-        'scipy>=1.2',
-        'statsmodels>=0.9',
-    ]
 }
 
 
@@ -33,15 +24,13 @@ PACKAGES = [
 ]
 
 CLASSIFIERS = [
+    'Development Status :: 4 - Beta',
     'Intended Audience :: All',
-    'Programming Language :: Python :: 3.7',
-    'Programming Language :: Python :: 3.8',
-    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3',
     'License :: OSI Approved :: BSD License',
-    'Topic :: Scientific/Engineering :: Visualization',
-    'Topic :: Multimedia :: Graphics',
-    'Operating System :: OS Independent',
-    'Framework :: Matplotlib',
+    'Topic :: Software Development',
+    'Topic :: System :: Hardware'
+    'Operating System :: POSIX :: Linux',
 ]
 
 

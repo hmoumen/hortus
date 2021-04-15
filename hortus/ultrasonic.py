@@ -1,4 +1,6 @@
 #-*- coding: utf-8 -*-
+import RPi.GPIO as GPIO 
+
 class ultrasonic:
 
 	def __init__(self, gpio_trigger, gpio_echo):

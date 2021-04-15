@@ -1,4 +1,5 @@
 #-*- coding: utf-8 -*-
+import RPi.GPIO as GPIO 
 
 class rdrop:
 	def __init__(self, gpio):
