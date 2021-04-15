@@ -16,9 +16,6 @@ DOWNLOAD_URL = 'https://github.com/hmoumen/hortus/'
 VERSION = '0.1'
 PYTHON_REQUIRES = ">=3.7"
 
-}
-
-
 PACKAGES = [
     'hortus',
 ]
