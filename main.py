@@ -24,17 +24,19 @@ def chrono():
 	while(time.time() != stop_time):
 		counter += 1
 		time.sleep(1)
-	GPIO.remove_event_detect(button1.gpio)
+	
 
 def water(channel):
 	if (relay1.status() == False):
 		relay1.on()
 		print("watering in progress ...")
 		chrono()
+		GPIO.remove_event_detect(button1.gpio)
 	else:
 		relay1.off()
 		print("OFF")
 		time.sleep(1)
+		GPIO.remove_event_detect(button1.gpio)
 
 def drain_tank(channel):
 	if (relay2.status() == False):
