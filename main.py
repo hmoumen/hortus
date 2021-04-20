@@ -7,6 +7,7 @@ import sys
 import datetime
 from hortus.relay import *
 from hortus.dht import *
+from hortus.weather import *
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -36,6 +37,7 @@ def main():
 	GPIO.add_event_detect(button4.gpio,GPIO.RISING,callback=drain_well)
 
 	now = datetime.datetime.now().strftime("%I:%M %p")
+	weather()
 	
 	if (now == watering_hour):
 		stop_time = time.time() + 60
@@ -62,6 +64,7 @@ if __name__ == "__main__":
 	button3 = button(12)	#init push button : well > tank
 	button4 = button(13)	#init push button : well > sewer
 	
+	dht1 = dht(12)
 	while True :
 		main()
 
