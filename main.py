@@ -10,7 +10,7 @@ from hortus.button import *
 from hortus.weather import *
 
 GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 
 
 tank_min = 130
