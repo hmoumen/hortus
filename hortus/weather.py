@@ -7,10 +7,10 @@ def weather():
 	r_weather = requests.get(url_weather)
 	data = r_weather.json()
 
-	daypartName = data['daypart'][1]['daypartName'][1]
-	narrative = data['daypart'][1]['narrative'][1]
-	precipchance = data['daypart'][1]['precipChance'][1]
-	temperature = data['daypart'][1]['temperature'][1]
+	daypartName = data['daypart'][0]['daypartName'][1]
+	narrative = data['daypart'][0]['narrative'][1]
+	precipchance = data['daypart'][0]['precipChance'][1]
+	temperature = data['daypart'][0]['temperature'][1]
 	
 	if precipchance < 60:
 		print("recommanded watering")
