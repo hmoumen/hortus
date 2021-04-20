@@ -59,10 +59,10 @@ if __name__ == "__main__":
 	relay3 = relay(24) 		#init pump relay : well > tank
 	relay4 = relay(25) 		#init pump relay : well > egout
 
-	button1 = button(13)  	#init push button : tank > garden
-	button2 = button(15)	#init push button : tank > sewer 
-	button3 = button(16)	#init push button : well > tank
-	button4 = button(18)	#init push button : well > sewer
+	button1 = button(15)  	#init push button : tank > garden
+	button2 = button(16)	#init push button : tank > sewer 
+	button3 = button(18)	#init push button : well > tank
+	button4 = button(20)	#init push button : well > sewer
 	
 	while True :
 		main()
