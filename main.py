@@ -10,7 +10,7 @@ from hortus.button import *
 from hortus.weather import *
 
 GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 
 
 tank_min = 130
@@ -65,12 +65,12 @@ def main():
 
 if __name__ == "__main__":
 	
-	relay1 = relay(6) 		#init pump relay : tank > garden
-	relay2 = relay(10) 		#init pump relay : tank > sewer
-	relay3 = relay(11) 		#init pump relay : well > tank
-	relay4 = relay(31) 		#init pump relay : well > egout
+	relay1 = relay(31) 		#init pump relay : tank > garden
+	relay2 = relay(33) 		#init pump relay : tank > sewer
+	relay3 = relay(35) 		#init pump relay : well > tank
+	relay4 = relay(37) 		#init pump relay : well > egout
 
-	button1 = button(21)  	#init push button : tank > garden
+	button1 = button(29)  	#init push button : tank > garden
 	button2 = button(22)	#init push button : tank > sewer 
 	button3 = button(23)	#init push button : well > tank
 	button4 = button(24)	#init push button : well > sewer
