@@ -38,7 +38,7 @@ def main():
 
 	now = datetime.datetime.now().strftime("%I:%M %p")
 	weather()
-	
+
 	if (now == watering_hour):
 		stop_time = time.time() + 60
 		relay1.on()
@@ -64,7 +64,6 @@ if __name__ == "__main__":
 	button3 = button(12)	#init push button : well > tank
 	button4 = button(13)	#init push button : well > sewer
 	
-	dht1 = dht(12)
 	while True :
 		main()
 
