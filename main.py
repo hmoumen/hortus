@@ -37,14 +37,13 @@ def water(channel):
 
 def drain_tank(channel):
 	if (relay2.status() == False):
-        relay2.on()
-    	print("draining tank in progress ...")
-    else:
-        relay2.off()
-        print("OFF")
-        time.sleep(1)
-    
-
+		relay2.on()
+		print("draining tank in progress ...")
+	else:
+		relay2.off()
+		print("OFF")
+		time.sleep(1)
+		
 def fill(channel):
     print("filling in progress ...")
 
