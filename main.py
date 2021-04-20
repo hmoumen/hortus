@@ -15,7 +15,7 @@ GPIO.setmode(GPIO.BOARD)
 
 tank_min = 130
 well_min = 250
-watering_duration = 900
+watering_duration = 5
 watering_hour = "02:43 PM"
 
 def chrono():
