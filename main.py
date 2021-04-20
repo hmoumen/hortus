@@ -31,10 +31,7 @@ def drain_well(channel):
 
 def main():
 	#setup event on pin rising edge
-	GPIO.add_event_detect(button1.gpio,GPIO.RISING,callback=water) 
-	GPIO.add_event_detect(button2.gpio,GPIO.RISING,callback=drain_tank) 
-	GPIO.add_event_detect(button3.gpio,GPIO.RISING,callback=fill)
-	GPIO.add_event_detect(button4.gpio,GPIO.RISING,callback=drain_well)
+
 
 	now = datetime.datetime.now().strftime("%I:%M %p")
 	weather()
@@ -63,6 +60,11 @@ if __name__ == "__main__":
 	button2 = button(22)	#init push button : tank > sewer 
 	button3 = button(23)	#init push button : well > tank
 	button4 = button(24)	#init push button : well > sewer
+	
+	GPIO.add_event_detect(button1.gpio,GPIO.RISING,callback=water) 
+	GPIO.add_event_detect(button2.gpio,GPIO.RISING,callback=drain_tank) 
+	GPIO.add_event_detect(button3.gpio,GPIO.RISING,callback=fill)
+	GPIO.add_event_detect(button4.gpio,GPIO.RISING,callback=drain_well)
 	
 	while True :
 		main()
