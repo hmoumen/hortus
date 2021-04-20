@@ -27,14 +27,13 @@ def chrono():
 
 def water(channel):
 	if (relay1.status() == False):
-        relay1.on()
-    	print("watering in progress ...")
+		relay1.on()
+		print("watering in progress ...")
 		chrono()
-    else:
-        relay1.off()
-        print("OFF")
-        time.sleep(1)
-    
+	else:
+		relay1.off()
+		print("OFF")
+		time.sleep(1)
 
 def drain_tank(channel):
 	if (relay2.status() == False):
