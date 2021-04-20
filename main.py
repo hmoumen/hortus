@@ -24,6 +24,7 @@ def chrono():
 	while(time.time() != stop_time):
 		counter += 1
 		time.sleep(1)
+	GPIO.remove_event_detect(button1.gpio)
 
 def water(channel):
 	if (relay1.status() == False):
