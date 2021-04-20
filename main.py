@@ -15,13 +15,36 @@ GPIO.setmode(GPIO.BCM)
 
 tank_min = 130
 well_min = 250
+watering_duration = 900
 watering_hour = "02:43 PM"
 
+def chrono():
+	stop_time = time.time() + watering_duration
+	counter = 0
+	while(time.time() != stop_time):
+		counter += 1
+		time.sleep(1)
+
 def water(channel):
-    print("watering in progress ...")
+	if (relay1.status() == False):
+        relay1.on()
+    	print("watering in progress ...")
+		chrono()
+    else:
+        relay1.off()
+        print("OFF")
+        time.sleep(1)
+    
 
 def drain_tank(channel):
-    print("draining tank in progress ...")
+	if (relay2.status() == False):
+        relay2.on()
+    	print("draining tank in progress ...")
+    else:
+        relay2.off()
+        print("OFF")
+        time.sleep(1)
+    
 
 def fill(channel):
     print("filling in progress ...")
@@ -34,17 +57,10 @@ def main():
 
 
 	now = datetime.datetime.now().strftime("%I:%M %p")
-	weather()
+	precip = weather()
 
-	if (now == watering_hour):
-		stop_time = time.time() + 60
-		relay1.on()
-		counter = 0
-		while(time.time() != stop_time):
-			counter += 1 
-			sys.stdout.write("\r" + "{}\t - arrosage en cours...".format(datetime.datetime.now().strftime("%I:%M:%S %p")))
-			sys.stdout.flush()
-			time.sleep(1)
+	if (now == watering_hour and precip == True):
+		relay1.on()	
 	else:
 		sys.stdout.write("\r" + "\t{} - en attente...".format(datetime.datetime.now().strftime("%I:%M:%S %p")))
 		sys.stdout.flush()
