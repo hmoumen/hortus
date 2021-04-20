@@ -10,5 +10,6 @@ class button:
         #print('\t*init : Push button GPIO : {}'.format(self.gpio))
         self.type = "push button"
 
-	def status(self):
-		return GPIO.input(self.gpio)
+    def status(self):
+        #return button state
+        return GPIO.input(self.gpio)
