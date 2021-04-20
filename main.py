@@ -54,7 +54,7 @@ def main():
 
 if __name__ == "__main__":
 	
-	relay1 = relay(6)) 		#init pump relay : tank > garden
+	relay1 = relay(6) 		#init pump relay : tank > garden
 	relay2 = relay(10) 		#init pump relay : tank > sewer
 	relay3 = relay(11) 		#init pump relay : well > tank
 	relay4 = relay(31) 		#init pump relay : well > egout
