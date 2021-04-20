@@ -6,7 +6,6 @@ from datetime import datetime
 import sys
 import datetime
 from hortus.relay import *
-from hortus.dht import *
 from hortus.weather import *
 
 GPIO.setwarnings(False)
