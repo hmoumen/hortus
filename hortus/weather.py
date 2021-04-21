@@ -3,7 +3,7 @@ import json
 import datetime
 
 def weather():
-	url_weather = "https://api.weather.com/v3/wx/forecast/daily/5day?geocode=48.92,2.21&format=json&units=m&language=fr-FR&apiKey=25c5e63beb6a445485e63beb6ac4548a"
+	url_weather = "https://api.weather.com/v3/wx/forecast/daily/5day?geocode=48.92,2.21&format=json&units=m&language=fr-FR&apiKey=f6deb84c610a4ae49eb84c610aaae440"
 	r_weather = requests.get(url_weather)
 	data = r_weather.json()
 
@@ -21,7 +21,7 @@ def weather():
 
 def weather_forcast():
 
-	url_weather = "https://api.weather.com/v3/wx/forecast/daily/5day?geocode=48.92,2.21&format=json&units=m&language=fr-FR&apiKey=25c5e63beb6a445485e63beb6ac4548a"
+	url_weather = "https://api.weather.com/v3/wx/forecast/daily/5day?geocode=48.92,2.21&format=json&units=m&language=fr-FR&apiKey=f6deb84c610a4ae49eb84c610aaae440"
 	r_weather = requests.get(url_weather)
 	data = r_weather.json()
 
