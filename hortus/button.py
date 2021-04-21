@@ -15,4 +15,5 @@ class button:
         return GPIO.input(self.gpio)
     
     def callback(self, type):
-        GPIO.add_event_detect(self.gpio,GPIO.RISING,callback=self.type) 
+        if (self.type == "water"):
+            GPIO.add_event_detect(self.gpio,GPIO.RISING,callback=water) 
