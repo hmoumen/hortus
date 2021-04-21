@@ -13,7 +13,6 @@ class button:
     def status(self):
         #return button state
         return GPIO.input(self.gpio)
-
-     def callback(self, type):
-        #return button state
+    
+    def callback(self, type):
         GPIO.add_event_detect(self.gpio,GPIO.RISING,callback=self.type) 
