@@ -55,7 +55,7 @@ def main():
 
 	now = datetime.datetime.now().strftime("%I:%M %p")
 	precip = weather()
-
+	weather_forcast()
 	if (now == watering_hour and precip == True):
 		relay1.on()	
 	else:
