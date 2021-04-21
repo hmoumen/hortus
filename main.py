@@ -54,8 +54,6 @@ def main():
 
 
 	now = datetime.datetime.now().strftime("%I:%M %p")
-	precip = weather()
-	weather_forcast()
 	if (now == watering_hour and precip == True):
 		relay1.on()	
 	else:
@@ -78,7 +76,8 @@ if __name__ == "__main__":
 	GPIO.add_event_detect(button2.gpio,GPIO.RISING,callback=drain_tank, bouncetime=200) 
 	GPIO.add_event_detect(button3.gpio,GPIO.RISING,callback=fill, bouncetime=200)
 	GPIO.add_event_detect(button4.gpio,GPIO.RISING,callback=drain_well, bouncetime=200)
-	
+	precip = weather()
+
 	while True :
 		main()
 
