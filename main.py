@@ -30,7 +30,7 @@ def water(channel):
 	if (relay1.status() == False):
 		relay1.on()
 		print("watering in progress ...")
-		chrono()
+		time.sleep(4)
 		GPIO.add_event_detect(button1.gpio,GPIO.RISING,callback=water) 
 		print("callback") 
 	else:
