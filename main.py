@@ -31,14 +31,12 @@ def water(channel):
 		relay1.on()
 		print("watering in progress ...")
 		time.sleep(4)
-		GPIO.add_event_detect(button1.gpio,GPIO.RISING,callback=water) 
 		print("callback") 
 	else:
 		relay1.off()
 		print("watering off")
 		time.sleep(1)
-		GPIO.add_event_detect(button1.gpio,GPIO.RISING,callback=water) 
-
+		
 def drain_tank(channel):
 	if (relay2.status() == False):
 		relay2.on()
