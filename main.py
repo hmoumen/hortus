@@ -31,7 +31,8 @@ def water(channel):
 		relay1.on()
 		print("watering in progress ...")
 		chrono()
-		button1.callback(water) 
+		button1.callback(water)
+		print("callback") 
 	else:
 		relay1.off()
 		print("watering off")
