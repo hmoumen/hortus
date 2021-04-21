@@ -73,10 +73,10 @@ if __name__ == "__main__":
 	relay3 = relay(35) 		#init pump relay : well > tank
 	relay4 = relay(37) 		#init pump relay : well > egout
 
-	button1 = button(29).callback(water)  	#init push button : tank > garden
-	button2 = button(22).callback(drain_tank)	#init push button : tank > sewer 
-	button3 = button(23).callback(fill)	#init push button : well > tank
-	button4 = button(24).callback(drain_well)	#init push button : well > sewer
+	button1 = button(29).callback("water")  	#init push button : tank > garden
+	button2 = button(22).callback("drain_tank")	#init push button : tank > sewer 
+	button3 = button(23).callback("fill")	#init push button : well > tank
+	button4 = button(24).callback("drain_well")	#init push button : well > sewer
 	
 	#GPIO.add_event_detect(button1.gpio,GPIO.RISING,callback=water) 
 	#GPIO.add_event_detect(button2.gpio,GPIO.RISING,callback=drain_tank) 
