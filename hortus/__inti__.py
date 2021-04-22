@@ -4,3 +4,6 @@ from .rgauge import *
 from .relay import *
 from .ultrasonic import *
 from .weather import *
+from .dht import *
+from .button import *
+from .lcd import *
