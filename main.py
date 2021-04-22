@@ -40,8 +40,7 @@ def drain_tank(channel):
 		print("draining tank in progress ...")
 	else:
 		relay2.off()
-		print("OFF")
-		time.sleep(1)
+		print("draining off")
 		
 def fill(channel):
     print("filling in progress ...")
@@ -67,10 +66,10 @@ if __name__ == "__main__":
 	relay3 = relay(35) 		#init pump relay : well > tank
 	relay4 = relay(37) 		#init pump relay : well > egout
 
-	button1 = button(29) 	#init push button : tank > garden
-	button2 = button(22)	#init push button : tank > sewer 
-	button3 = button(23)	#init push button : well > tank
-	button4 = button(24)	#init push button : well > sewer
+	button1 = button(28) 	#init push button : tank > garden
+	button2 = button(26)	#init push button : tank > sewer 
+	button3 = button(24)	#init push button : well > tank
+	button4 = button(22)	#init push button : well > sewer
 	
 	GPIO.add_event_detect(button1.gpio,GPIO.RISING,callback=water, bouncetime=200) 
 	GPIO.add_event_detect(button2.gpio,GPIO.RISING,callback=drain_tank, bouncetime=200) 
