@@ -9,6 +9,7 @@ from hortus.relay import *
 from hortus.button import *
 from hortus.weather import *
 
+
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
@@ -50,8 +51,6 @@ def drain_well(channel):
 
 def main():
 	#setup event on pin rising edge
-
-
 	now = datetime.datetime.now().strftime("%I:%M %p")
 	if (now == watering_hour and precip == True):
 		relay1.on()	
@@ -71,12 +70,15 @@ if __name__ == "__main__":
 	button3 = button(8)	#init push button : well > tank
 	button4 = button(25)	#init push button : well > sewer
 	
+	dht1 = dht(23)
 	GPIO.add_event_detect(button1.gpio,GPIO.RISING,callback=water, bouncetime=200) 
 	GPIO.add_event_detect(button2.gpio,GPIO.RISING,callback=drain_tank, bouncetime=200) 
 	GPIO.add_event_detect(button3.gpio,GPIO.RISING,callback=fill, bouncetime=200)
 	GPIO.add_event_detect(button4.gpio,GPIO.RISING,callback=drain_well, bouncetime=200)
 	precip = weather()
-
+	weather_forcast()
+	dht1.humidity()
+	
 	while True :
 		main()
 
