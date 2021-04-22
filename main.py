@@ -51,7 +51,6 @@ def drain_well(channel):
     print("draining well in progress ...")
 
 def main():
-	#setup event on pin rising edge
 	lcd(dht1.humidity(), dht1.temperature, precip)
 	now = datetime.datetime.now().strftime("%I:%M %p")
 	if (now == watering_hour and precip == True):
