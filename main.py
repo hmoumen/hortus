@@ -72,6 +72,7 @@ if __name__ == "__main__":
 	button4 = button(25)	#init push button : well > sewer
 	
 	dht1 = dht(23)
+	
 	GPIO.add_event_detect(button1.gpio,GPIO.RISING,callback=water, bouncetime=200) 
 	GPIO.add_event_detect(button2.gpio,GPIO.RISING,callback=drain_tank, bouncetime=200) 
 	GPIO.add_event_detect(button3.gpio,GPIO.RISING,callback=fill, bouncetime=200)
