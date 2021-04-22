@@ -13,7 +13,6 @@ class dht:
             return round(humidity, 1)
         else:
             return 0
-
     
     def temperature(self):
         temperature = round(Adafruit_DHT.read_retry(22, self.gpio)[1], 1)
