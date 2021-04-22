@@ -10,7 +10,7 @@ class dht:
     def humidity(self):
         humidity = Adafruit_DHT.read_retry(22, self.gpio)[0]
         if humidity is not None:
-            print('Humidity = {1:0.1f}%'.format(humidity))
+            print(humidity)
 
     
     def temperature(self):
