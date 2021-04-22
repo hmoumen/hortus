@@ -30,8 +30,8 @@ class relay:
 			self.on()
 			print("watering in progress ...") 
 		elif (self.status() == False and level < 10 and duration < 300):
-			relay1.off()
+			self.off()
 			print("insufficient water level")
 		else:
-			relay1.off()
-			print("insufficient water level")
+			self.off()
+			print("watering completed")
