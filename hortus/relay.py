@@ -28,10 +28,11 @@ class relay:
 		duration = time.time() - start
 		if (self.status() == False and level > 10 and duration < 300):
 			self.on()
-			print("watering in progress ...") 
-		elif (self.status() == False and level < 10 and duration < 300):
+			print("\twatering in progress ...")
+			print('\t*level \t: {}'.format(level))
+			print('\t*duration \t: {}'.format(duration))
+		elif (self.status() == False and level < 10 or duration > 300):
 			self.off()
 			print("insufficient water level")
 		else:
-			self.off()
-			print("watering completed")
+			pass
