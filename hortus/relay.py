@@ -26,6 +26,7 @@ class relay:
 
 	def water(self, type, level, start):
 		duration = time.time() - start
+		print("watering ?")
 		if (self.status() == False and level > 10 and duration < 6):
 			self.on()
 			print("\twatering in progress ...")
