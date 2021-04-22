@@ -58,7 +58,6 @@ def main():
 	else:
 		sys.stdout.write("\r" + "\t{} - en attente...".format(datetime.datetime.now().strftime("%I:%M:%S %p")))
 		sys.stdout.flush()
-	time.sleep(.5)
 
 if __name__ == "__main__":
 	
@@ -68,8 +67,8 @@ if __name__ == "__main__":
 	relay4 = relay(26) 		#init pump relay : well > egout
 
 	button1 = button(1) 	#init push button : tank > garden
-	button2 = button(7)	#init push button : tank > sewer 
-	button3 = button(8)	#init push button : well > tank
+	button2 = button(7)		#init push button : tank > sewer 
+	button3 = button(8)		#init push button : well > tank
 	button4 = button(25)	#init push button : well > sewer
 	
 	dht1 = dht(23)
@@ -80,7 +79,9 @@ if __name__ == "__main__":
 	GPIO.add_event_detect(button4.gpio,GPIO.RISING,callback=drain_well, bouncetime=200)
 	precip = weather()
 
-	while True :
-		main()
-
-GPIO.cleanup()
+	try:
+		while True :
+			main()
+	except KeyboardInterrupt:
+		GPIO.cleanup()
+		sys.exit("Hortus closed, bye !")
