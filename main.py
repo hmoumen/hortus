@@ -4,7 +4,6 @@ import RPi.GPIO as GPIO
 import time
 from datetime import datetime
 import sys
-import datetime
 from hortus.relay import *
 from hortus.button import *
 from hortus.weather import *
