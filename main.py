@@ -59,6 +59,7 @@ def main():
 	else:
 		sys.stdout.write("\r" + "\t{} - en attente...".format(datetime.datetime.now().strftime("%I:%M:%S %p")))
 		sys.stdout.flush()
+	time.sleep(.5)
 
 if __name__ == "__main__":
 	

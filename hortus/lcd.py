@@ -45,9 +45,9 @@ def lcd(temp, humidity, precip):
     # Draw a black filled box to clear the image.
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
-    draw.text((x, top),       "Temperature : " + temp,  font=font, fill=255)
-    draw.text((x, top+8),     "Humidite : " + humidity, font=font, fill=255)
-    draw.text((x, top+16),    "Precipitation : " + precip,  font=font, fill=255)
+    draw.text((x, top),       "Temperature : " + str(temp),  font=font, fill=255)
+    draw.text((x, top+8),     "Humidite : " + str(humidity), font=font, fill=255)
+    draw.text((x, top+16),    "Precipitation : " + str(precip),  font=font, fill=255)
 
     # Display image.
     disp.image(image)
