@@ -31,7 +31,7 @@ def chrono():
 
 def water(channel):
 	if (relay1.status() == False):
-		relay1.on()
+		relay1.on(now)
 		print("watering in progress ...") 
 	else:
 		relay1.off()
@@ -53,10 +53,9 @@ def drain_well(channel):
 
 def main():
 	lcd(dht1.humidity(), dht1.temperature(), hc1.get_avgdepth())
-
 	now = datetime.datetime.now().strftime("%I:%M %p")
 	if (now == watering_hour and precip == True):
-		relay1.on()	
+		relay1.water("auto",hc1.get_percdepth(),time.time())	
 	else:
 		sys.stdout.write("\r" + "\t{} - en attente...".format(datetime.datetime.now().strftime("%I:%M:%S %p")))
 		sys.stdout.flush()

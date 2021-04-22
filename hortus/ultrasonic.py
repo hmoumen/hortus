@@ -62,9 +62,10 @@ class ultrasonic:
 		return depth
 
 	def get_percdepth(self):
-		depth_per = 100 - ((self.get_avgdepth() / 150) * 100)
-		if (depth_per > 20):
+		return ((self.get_avgdepth() / 150) * 100)
+		#depth_per = 100 - ((self.get_avgdepth() / 150) * 100)
+		#if (depth_per > 20):
 			#print("Reservoir d'eau rempli à {} %".format(depth_per))
-			return True
-		else:
-			return False
+		#	return True
+		#else:
+		#	return False
