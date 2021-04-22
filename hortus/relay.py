@@ -9,9 +9,8 @@ class relay:
 		GPIO.setup(self.gpio, GPIO.OUT)
 		self.type = "relay"
 
-	def on(self, launch_time):
+	def on(self):
 		GPIO.output(self.gpio, GPIO.HIGH)
-		self.launch_time = launch_time
 
 	def off(self):
 		GPIO.output(self.gpio, GPIO.LOW)
@@ -28,7 +27,7 @@ class relay:
 	def water(self, type, level, start):
 		duration = time.time() - start
 		if (self.status() == False and level > 10 and duration < 300):
-			relay1.on(now)
+			self.on()
 			print("watering in progress ...") 
 		elif (self.status() == False and level < 10 and duration < 300):
 			relay1.off()
