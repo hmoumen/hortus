@@ -50,7 +50,8 @@ def drain_well(channel):
     print("draining well in progress ...")
 
 def main():
-	lcd(dht1.humidity(), dht1.temperature(), precip)
+	lcd(dht1.humidity(), dht1.temperature(), hc1.get_avgdepth())
+
 	now = datetime.datetime.now().strftime("%I:%M %p")
 	if (now == watering_hour and precip == True):
 		relay1.on()	
@@ -72,10 +73,13 @@ if __name__ == "__main__":
 	
 	dht1 = dht(23)
 
+	hc1 = ultrasonic(14,15)
+
 	GPIO.add_event_detect(button1.gpio,GPIO.RISING,callback=water, bouncetime=200) 
 	GPIO.add_event_detect(button2.gpio,GPIO.RISING,callback=drain_tank, bouncetime=200) 
 	GPIO.add_event_detect(button3.gpio,GPIO.RISING,callback=fill, bouncetime=200)
 	GPIO.add_event_detect(button4.gpio,GPIO.RISING,callback=drain_well, bouncetime=200)
+	
 	precip = weather()
 
 	try:

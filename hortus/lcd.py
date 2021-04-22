@@ -46,8 +46,7 @@ def lcd(temp, humidity, precip):
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
     draw.text((x, top),       "T°C : " + str(temp) + "HR %: " + str(humidity) ,  font=font, fill=255)
-    draw.text((x, top+8),     "Humidite : " + str(humidity), font=font, fill=255)
-    draw.text((x, top+16),    "Precipitation : " + str(precip),  font=font, fill=255)
+    draw.text((x, top+16),     "Tank : " + str(precip), font=font, fill=255)
 
     # Display image.
     disp.image(image)
