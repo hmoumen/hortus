@@ -4,11 +4,13 @@ import RPi.GPIO as GPIO
 import time
 from datetime import datetime
 import sys
+
 from hortus.relay import *
 from hortus.button import *
 from hortus.weather import *
 from hortus.dht import *
 from hortus.lcd import lcd
+from hortus.ultrasonic import *
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
