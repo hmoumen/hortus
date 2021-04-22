@@ -8,7 +8,7 @@ import datetime
 from hortus.relay import *
 from hortus.button import *
 from hortus.weather import *
-
+from hortus.dht import *
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -78,7 +78,7 @@ if __name__ == "__main__":
 	precip = weather()
 	weather_forcast()
 	dht1.humidity()
-	
+
 	while True :
 		main()
 
