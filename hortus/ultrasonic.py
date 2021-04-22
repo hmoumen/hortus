@@ -23,7 +23,7 @@ class ultrasonic:
 		while GPIO.input(self.gpio_echo)==0:
 			start = time.time()
 		# Assign the actual time to stop variable until the ECHO goes back from HIGH to LOW
-		while GPIO.input(GPIO_ECHO)==1:
+		while GPIO.input(self.gpio_echo)==1:
 			stop = time.time()
 		# Calculate the time it took the wave to travel there and back
 		measuredTime = stop - start
