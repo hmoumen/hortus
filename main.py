@@ -51,6 +51,7 @@ def drain_well(channel):
 
 def main():
 	#setup event on pin rising edge
+	print(dht1.humidity())
 	now = datetime.datetime.now().strftime("%I:%M %p")
 	if (now == watering_hour and precip == True):
 		relay1.on()	
@@ -76,8 +77,6 @@ if __name__ == "__main__":
 	GPIO.add_event_detect(button3.gpio,GPIO.RISING,callback=fill, bouncetime=200)
 	GPIO.add_event_detect(button4.gpio,GPIO.RISING,callback=drain_well, bouncetime=200)
 	precip = weather()
-	weather_forcast()
-	dht1.humidity()
 
 	while True :
 		main()
