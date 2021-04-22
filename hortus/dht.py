@@ -16,6 +16,6 @@ class dht:
     def temperature(self):
         humidity, temperature = dht.read_retry(22, self.gpio)
         if humidity is not None and temperature is not None:
-            print('Temp={0:0.1f}°C'.format(temperature)
+            print('Temperature={0:0.1f}°C'.format(temperature)
 
 
