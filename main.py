@@ -16,7 +16,7 @@ GPIO.setmode(GPIO.BCM)
 tank_min = 130
 well_min = 250
 watering_duration = 5
-watering_hour = "02:43 PM"
+watering_hour = "12:36 PM"
 
 def chrono():
 	stop_time = time.time() + watering_duration
