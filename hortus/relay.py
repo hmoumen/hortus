@@ -27,6 +27,7 @@ class relay:
 		time.sleep(0.5)
 
 	def water(self, type, level):
+		print("status: {} - level: {}".format(self.status(), level))
 		if (self.status() == False and level > 65):
 			self.start = time.time()
 			self.on()
@@ -36,4 +37,5 @@ class relay:
 			self.start = None
 			print("insufficient water level or time out")
 		else:
+			print("pass")
 			pass
