@@ -28,7 +28,7 @@ class relay:
 
 	def water(self, type, level):
 		print("status: {} - level: {}".format(self.status(), level))
-		if (self.status() == False and level > 65):
+		if (self.status() == False and level > 10):
 			self.start = time.time()
 			self.on()
 			print("watering in progress")
