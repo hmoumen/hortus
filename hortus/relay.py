@@ -6,7 +6,7 @@ class relay:
 	def __init__(self, gpio):
 		self.gpio = gpio
 		print('\t*init : relay GPIO : {}'.format(self.gpio))
-		GPIO.setup(self.gpio, GPIO.OUT)
+		GPIO.setup(self.gpio, GPIO.OUT, pull_up_down=GPIO.PUD_DOWN)
 		self.type = "relay"
 		self.start = None
 
@@ -26,8 +26,6 @@ class relay:
 		time.sleep(0.5)
 
 	def water(self, type, level):
-		print("Niveau : {}".format(level))
-		print("Status : {}".format(self.status()))
 		if (self.status() == False and level > 65):
 			self.start = time.time()
 			self.on()
