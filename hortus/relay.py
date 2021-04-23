@@ -6,7 +6,8 @@ class relay:
 	def __init__(self, gpio):
 		self.gpio = gpio
 		print('\t*init : relay GPIO : {}'.format(self.gpio))
-		GPIO.setup(self.gpio, GPIO.OUT, pull_up_down=GPIO.PUD_DOWN)
+		GPIO.setup(self.gpio, GPIO.OUT)
+		self.off()
 		self.type = "relay"
 		self.start = None
 
