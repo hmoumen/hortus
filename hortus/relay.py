@@ -32,7 +32,7 @@ class relay:
 			self.start = time.time()
 			self.on()
 			print("watering in progress")
-		elif (self.status() == True and self.start is not None and (level < 10 or (time.time() - self.start) > 10 )):
+		elif (self.status() == True and self.start is not None and (level < 10 or (time.time() - self.start) > 65 )):
 			self.off()
 			self.start = None
 			print("insufficient water level or time out")
