@@ -8,6 +8,7 @@ class relay:
 		print('\t*init : relay GPIO : {}'.format(self.gpio))
 		GPIO.setup(self.gpio, GPIO.OUT)
 		self.type = "relay"
+		self.start = None
 
 	def on(self):
 		GPIO.output(self.gpio, GPIO.HIGH)
