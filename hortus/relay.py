@@ -39,9 +39,9 @@ class relay:
 			#return (now + " - automatic watering in progress")
 	
 		elif (self.status() == True and self.start is not None and (level < 10 or (time.time() - self.start) > 65 )):
-			self.start = None
 			self.off()
 			print("insufficient water level : {} or time out {}:".format(level, (time.time() - self.start)))
+			self.start = None
 			#return "insufficient water level : " + level + "or time out: " + (time.time() - self.start)
 
 		elif (self.status() == False and level > 10 and type == "manual"):
@@ -50,9 +50,9 @@ class relay:
 			print("{} - manual watering in progress".format(now))
 			#return now +" - manual watering in progress"
 		elif (self.status() == True and type == "manual"):
-			self.start = None
 			self.off()
 			print("{} - manual watering cut-off".format(now))
 			#return now + " - manual watering cut-off"
+			self.start = None
 		else:
 			pass
