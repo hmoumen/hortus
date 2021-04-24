@@ -30,7 +30,7 @@ class relay:
 
 	def water(self, type, level, whour, precip):
 		#print("status: {} - level: {}".format(self.status(), level))
-		now = datetime.datetime.now().strftime("%I:%M %p")
+		now = datetime.now().strftime("%I:%M %p")
 		if (self.status() == False and level > 10 and whour == now and precip == True):
 			self.start = time.time()
 			self.on()
