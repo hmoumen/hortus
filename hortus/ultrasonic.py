@@ -52,7 +52,7 @@ class ultrasonic:
 			# Calculate the time it took the wave to travel there and back
 			measuredTime = stop - start
 			# Calculate the travel distance by multiplying the measured time by speed of sound
-			distanceBothWays = measuredTime * 33112 # cm/s in 20 degrees Celsius
+			distanceBothWays = measuredTime * 34029 # cm/s in 20 degrees Celsius
 			# Divide the distance by 2 to get the actual distance from sensor to obstacle
 			depth = distanceBothWays / 2
 			if (depth != 0):
