@@ -55,5 +55,5 @@ class relay:
 			#print("{} - manual watering cut-off".format(now))
 			return now + " - manual watering cut-off"
 		else:
-			return "waiting ..."
+			return "(time.time() - self.start)"
 			pass
