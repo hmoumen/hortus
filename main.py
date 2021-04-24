@@ -19,15 +19,7 @@ GPIO.setmode(GPIO.BCM)
 tank_min = 130
 well_min = 250
 watering_duration = 5
-watering_hour = "04:37 PM"
-
-def chrono():
-	stop_time = time.time() + watering_duration
-	counter = 0
-	while(time.time() != stop_time):
-		counter += 1
-		time.sleep(1)
-	
+whour = "04:37 PM"
 
 def water(channel):
 	if (relay1.status() == False):
@@ -53,12 +45,9 @@ def drain_well(channel):
 
 def main():
 	#lcd(dht1.humidity(), dht1.temperature(), hc1.get_avgdepth())
-	now = datetime.datetime.now().strftime("%I:%M %p")
-	if (now == watering_hour and precip == True):
-		relay1.water("auto",hc1.get_percdepth())	
-	else:
-		sys.stdout.write("\r" + "\t{} - en attente...".format(datetime.datetime.now().strftime("%I:%M:%S %p")))
-		sys.stdout.flush()
+	relay1.water("auto",hc1.get_percdepth(),whour,precip)
+	sys.stdout.write("\r" + "\t{} - en attente...".format(datetime.datetime.now().strftime("%I:%M:%S %p")))
+	sys.stdout.flush()
 
 if __name__ == "__main__":
 	
