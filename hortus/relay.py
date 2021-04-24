@@ -1,6 +1,8 @@
 #-*- coding: utf-8 -*-
 import RPi.GPIO as GPIO 
 import time
+from datetime import datetime
+
 class relay:
 
 	def __init__(self, gpio):

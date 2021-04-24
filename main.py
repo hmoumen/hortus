@@ -19,7 +19,7 @@ GPIO.setmode(GPIO.BCM)
 tank_min = 130
 well_min = 250
 watering_duration = 5
-whour = "04:37 PM"
+whour = "03:47 PM"
 
 def water(channel):
 	if (relay1.status() == False):
