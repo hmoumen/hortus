@@ -19,11 +19,11 @@ GPIO.setmode(GPIO.BCM)
 tank_min = 130
 well_min = 250
 watering_duration = 5
-whour = "03:51 PM"
+whour = "04:04 PM"
 
 def water(channel):
 	if (relay1.status() == False):
-		relay1.on(now)
+		relay1.on()
 		print("watering in progress ...") 
 	else:
 		relay1.off()
@@ -66,7 +66,7 @@ if __name__ == "__main__":
 
 	hc1 = ultrasonic(14,15)
 
-	GPIO.add_event_detect(button1.gpio,GPIO.RISING,callback=water, bouncetime=200) 
+	GPIO.add_event_detect(button1.gpio,GPIO.RISING,callback=relay1.water("manual",hc1.get_percdepth(),whour,precip), bouncetime=200) 
 	GPIO.add_event_detect(button2.gpio,GPIO.RISING,callback=drain_tank, bouncetime=200) 
 	GPIO.add_event_detect(button3.gpio,GPIO.RISING,callback=fill, bouncetime=200)
 	GPIO.add_event_detect(button4.gpio,GPIO.RISING,callback=drain_well, bouncetime=200)
