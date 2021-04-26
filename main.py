@@ -23,7 +23,7 @@ watering_duration = 5
 whour = "04:28 PM"
 
 def water(channel):
-	relay1.water("manual",hc1.get_percdepth(), 0, 0)
+	relay1.water("manual",hc1.get_percdepth(tank_capacity), 0, 0)
 
 def drain_tank(channel):
 	if (relay2.status() == False):
