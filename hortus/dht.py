@@ -21,7 +21,7 @@ class dht:
         elif ((self.flag is True) and ((time.time() - self.tempo) > 3600)):
             self.flag = False
         else:
-            return self.data
+            return (round(self.humidity), round(self.temperature))
     
     def temperature(self):
         temperature = round(Adafruit_DHT.read_retry(22, self.gpio)[1], 1)
