@@ -9,14 +9,15 @@ class dht:
         self.type = "dht"
         self.tempo = 0
         self.flag = False
-        self.data = ()
+        self.humidity = None
+        self.temperature = None
 
     def get_data(self):
         if self.flag is False:
-            self.data[0], self.data[1] = Adafruit_DHT.read_retry(22, self.gpio)
+            self.humidity, self.temperature = Adafruit_DHT.read_retry(22, self.gpio)
             self.tempo = time.time()
             self.flag = True
-            return self.data
+            return (round(self.humidity), round(self.temperature))
         elif ((self.flag is True) and ((time.time() - self.tempo) > 3600)):
             self.flag = False
         else:
@@ -25,6 +26,6 @@ class dht:
     def temperature(self):
         temperature = round(Adafruit_DHT.read_retry(22, self.gpio)[1], 1)
         if temperature is not None:
-            return round(temperature)
+            return (round(self.humidity), round(self.temperature))
         else:
             return 0
