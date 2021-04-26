@@ -9,7 +9,7 @@ class dht:
         self.type = "dht"
         self.tempo = 0
         self.flag = False
-        self.data = 0
+        self.data = ()
 
     def get_data(self):
         if self.flag is False:
