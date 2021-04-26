@@ -12,7 +12,7 @@ class dht:
 
     def data(self):
         if self.flag is False:
-            self.data[0], self.data[1] = round(Adafruit_DHT.read_retry(22, self.gpio)[0])
+            self.data[0], self.data[1] = round(Adafruit_DHT.read_retry(22, self.gpio))
             self.tempo = time.time()
             self.flag = True
             return self.data
