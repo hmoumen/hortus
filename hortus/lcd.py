@@ -18,8 +18,8 @@ def lcd(temp, humidity, filling, relay1, relay2):
     # Raspberry Pi pin configuration:
     RST = None     # on the PiOLED this pin isnt used
 
-    #disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST)
-    disp = Adafruit_SSD1306.SSD1306_128_32(rst=RST)
+    disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST)
+    #disp = Adafruit_SSD1306.SSD1306_128_32(rst=RST)
     # Initialize library.
     disp.begin()
 
@@ -52,8 +52,8 @@ def lcd(temp, humidity, filling, relay1, relay2):
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
     draw.text((x, top),       "T°C : " + str(temp) + "HR %: " + str(humidity) ,  font=font, fill=255)
-    draw.text((x, top+8),     "Tank : " + str(filling), font=font, fill=255)
-    draw.text((x, top+16),     "Reservoir - Pompe 1: " + status(relay1) + "- Pompe 2:" + status(relay2) , font=font, fill=255)
+    draw.text((x, top+8),     "Tank: *Depth " + str(round(filling)), font=font, fill=255)
+    draw.text((x, top+16),    "      *P1: " + status(relay1) + "- *P2:" + status(relay2) , font=font, fill=255)
     # Display image.
     disp.image(image)
     disp.display()
