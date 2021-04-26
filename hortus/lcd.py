@@ -52,12 +52,12 @@ def lcd(temp, humidity, capacity, relay1, relay2, relay3, relay4):
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
     draw.text((x, top),       " | T: " + str(temp) + "°C | H: " + str(humidity) + "% |" ,  font=font, fill=255)
-    draw.text((x, top+8),     " | Cuve:", font=font, fill=255)
-    draw.text((x, top+16),    " | Qté: " + str(round(capacity)) + "% |", font=font, fill=255)
-    draw.text((x, top+24),    " | P1: " + status(relay1) + " | P2:" + status(relay2) + " |", font=font, fill=255)
-    draw.text((x, top+32),    " | Puit:", font=font, fill=255)
-    draw.text((x, top+40),    " | Qté: " + str(round(capacity)) + "% | P3: " + status(relay3) + " | P4:" + status(relay4) , font=font, fill=255)
-    draw.text((x, top+48),    " | P3: " + status(relay3) + " | P4:" + status(relay4) , font=font, fill=255)
+    draw.text((x, top+12),     " | Cuve:", font=font, fill=255)
+    draw.text((x, top+20),    " | Qté: " + str(round(capacity)) + "% |", font=font, fill=255)
+    draw.text((x, top+28),    " | P1: " + status(relay1) + " | P2:" + status(relay2) + " |", font=font, fill=255)
+    draw.text((x, top+36),    " | Puit:", font=font, fill=255)
+    draw.text((x, top+44),    " | Qté: " + str(round(capacity)) + "% |", font=font, fill=255)
+    draw.text((x, top+52),    " | P3: " + status(relay3) + " | P4:" + status(relay4) , font=font, fill=255)
     # Display image.
     disp.image(image)
     disp.display()
