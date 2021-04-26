@@ -51,7 +51,7 @@ def lcd(temp, humidity, filling, relay1, relay2):
     # Draw a black filled box to clear the image.
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
-    draw.text((x, top),       "T°C : " + str(temp) + "HR %: " + str(humidity) ,  font=font, fill=255)
+    draw.text((x, top),       "T: " + str(temp) + "°C - H: " + str(humidity) + "%" ,  font=font, fill=255)
     draw.text((x, top+8),     "Tank: *Depth " + str(round(filling)), font=font, fill=255)
     draw.text((x, top+16),    "      *P1: " + status(relay1) + "- *P2:" + status(relay2) , font=font, fill=255)
     # Display image.
