@@ -12,12 +12,13 @@ def weather():
 	precipchance = data['daypart'][0]['precipChance'][1]
 	temperature = data['daypart'][0]['temperature'][1]
 	
-	if precipchance < 60:
+	return precipchance
+	#if precipchance < 60:
 		#print("recommanded watering")
-		return True
-	else:
-		return False
-	print("{} : {} °C - {} %".format(daypartName, temperature, precipchance))
+	#	return True
+	#else:
+	#	return False
+	#print("{} : {} °C - {} %".format(daypartName, temperature, precipchance))
 
 def weather_forcast():
 

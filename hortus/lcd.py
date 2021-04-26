@@ -14,7 +14,7 @@ def status(relay):
     else:
         return "OFF"
 
-def lcd(temp, humidity, capacity, relay1, relay2, relay3, relay4):
+def lcd(temp, humidity, precip, capacity, relay1, relay2, relay3, relay4):
     # Raspberry Pi pin configuration:
     RST = None     # on the PiOLED this pin isnt used
 
@@ -52,10 +52,11 @@ def lcd(temp, humidity, capacity, relay1, relay2, relay3, relay4):
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
     draw.text((x, top),       " | T: " + str(temp) + "°C | H: " + str(humidity) + "% |" ,  font=font, fill=255)
-    draw.text((x, top+8),    " | Cuve:" + str(round(capacity)) + "% |", font=font, fill=255)
-    draw.text((x, top+16),    " | P1: " + status(relay1) + " | P2:" + status(relay2) + " |", font=font, fill=255)
-    draw.text((x, top+24),    " | Puit:" + str(round(capacity)) + "% |", font=font, fill=255)
-    draw.text((x, top+32),    " | P3: " + status(relay3) + " | P4:" + status(relay4) , font=font, fill=255)
+    draw.text((x, top+8),       " | Precipitation : " + str(precip) + "% |",  font=font, fill=255)
+    draw.text((x, top+16),    " | Cuve:" + str(round(capacity)) + "% |", font=font, fill=255)
+    draw.text((x, top+24),    " | P1: " + status(relay1) + " | P2:" + status(relay2) + " |", font=font, fill=255)
+    draw.text((x, top+32),    " | Puit:" + str(round(capacity)) + "% |", font=font, fill=255)
+    draw.text((x, top+40),    " | P3: " + status(relay3) + " | P4:" + status(relay4) , font=font, fill=255)
     # Display image.
     disp.image(image)
     disp.display()

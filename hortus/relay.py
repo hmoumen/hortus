@@ -32,7 +32,7 @@ class relay:
 		#print("status: {} - level: {}".format(self.status(), level))
 		now = datetime.now().strftime("%I:%M %p")
 		
-		if (self.status() == False and level > 40 and whour == now and precip == True):
+		if (self.status() == False and level > 40 and whour == now and precip > 50):
 			self.start = time.time()
 			self.on()
 			print("{} - automatic watering in progress".format(now))
