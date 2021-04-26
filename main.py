@@ -42,7 +42,7 @@ def drain_well(channel):
 def main():
 	lcd(dht1.humidity(), dht1.temperature(), hc1.get_percdepth(tank_capacity), relay1.status(), relay2.status(), relay3.status(),relay4.status())
 	relay1.water("auto",hc1.get_percdepth(tank_capacity),whour,precip)
-	sys.stdout.write("\r" + "\t{} - en attente".format(datetime.datetime.now().strftime("%I:%M:%S %p"))
+	sys.stdout.write("\r" + "\t{} - en attente".format(datetime.datetime.now().strftime("%I:%M:%S %p")))
 	sys.stdout.flush()
 
 if __name__ == "__main__":
