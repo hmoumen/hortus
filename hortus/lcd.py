@@ -45,18 +45,18 @@ def lcd(temp, humidity, precip, capacity, relay1, relay2, relay3, relay4):
     top = padding
     bottom = height-padding
     # Move left to right keeping track of the current x position for drawing shapes.
-    x = 2
+    x = 0
     # Load default font.
     font = ImageFont.load_default()
     # Draw a black filled box to clear the image.
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
     draw.text((x, top),       " | T: " + str(temp) + "°C | H: " + str(humidity) + "% |" ,  font=font, fill=255)
-    draw.text((x, top+8),       " | Precipitation : " + str(precip) + "% |",  font=font, fill=255)
+    draw.text((x, top+8),     " | Pluie : " + str(precip) + "% |",  font=font, fill=255)
     draw.text((x, top+16),    " | Cuve:" + str(round(capacity)) + "% |", font=font, fill=255)
     draw.text((x, top+24),    " | P1: " + status(relay1) + " | P2:" + status(relay2) + " |", font=font, fill=255)
     draw.text((x, top+32),    " | Puit:" + str(round(capacity)) + "% |", font=font, fill=255)
-    draw.text((x, top+40),    " | P3: " + status(relay3) + " | P4:" + status(relay4) , font=font, fill=255)
+    draw.text((x, top+40),    " | P3: " + status(relay3) + " | P4:" + status(relay4) + " |" , font=font, fill=255)
     # Display image.
     disp.image(image)
     disp.display()
