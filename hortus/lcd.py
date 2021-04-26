@@ -53,7 +53,7 @@ def lcd(temp, humidity, filling, relay1, relay2):
 
     draw.text((x, top),       "T°C : " + str(temp) + "HR %: " + str(humidity) ,  font=font, fill=255)
     draw.text((x, top+8),     "Tank : " + str(filling), font=font, fill=255)
-    draw.text((x, top+16),     "Reservoir - Pompe 1: " + status(relay1) + "- Pompe 2:" status(relay2)+ , font=font, fill=255)
+    draw.text((x, top+16),     "Reservoir - Pompe 1: " + status(relay1) + "- Pompe 2:" status(relay2) , font=font, fill=255)
     # Display image.
     disp.image(image)
     disp.display()
