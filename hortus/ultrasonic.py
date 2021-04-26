@@ -53,7 +53,7 @@ class ultrasonic:
 			measuredTime = stop - start
 			# Divide the distance by 2 to get the actual distance from sensor to obstacle
 			depth = (measuredTime * 34200) / 2
-			if (depth != 0):
+			if (depth != 0):5
 				depth_sum = depth_sum + depth
 				i+=1
 		average_depth = (depth_sum / i)
