@@ -8,7 +8,7 @@ from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
 
-def status(relay)
+def status(relay):
     if (relay == True):
         return "ON"
     else:
