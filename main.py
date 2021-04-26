@@ -39,7 +39,7 @@ def drain_well(channel):
     print("draining well in progress ...")
 
 def main():
-	#lcd(dht1.humidity(), dht1.temperature(), hc1.get_avgdepth())
+	lcd(dht1.humidity(), dht1.temperature(), hc1.get_avgdepth(), relay1.status(), relay2.status())
 	relay1.water("auto",hc1.get_percdepth(),whour,precip)
 	sys.stdout.write("\r" + "\t{} - en attente - level: {}".format(datetime.datetime.now().strftime("%I:%M:%S %p"),hc1.get_percdepth()))
 	sys.stdout.flush()
