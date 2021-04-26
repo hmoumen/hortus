@@ -32,19 +32,19 @@ class relay:
 		#print("status: {} - level: {}".format(self.status(), level))
 		now = datetime.now().strftime("%I:%M %p")
 		
-		if (self.status() == False and level < 40 and whour == now and precip == True):
+		if (self.status() == False and level > 40 and whour == now and precip == True):
 			self.start = time.time()
 			self.on()
 			print("{} - automatic watering in progress".format(now))
 			#return (now + " - automatic watering in progress")
 	
-		elif (self.status() == True and self.start is not None and (level > 40 or (time.time() - self.start) > 65 )):
+		elif (self.status() == True and self.start is not None and (level < 40 or (time.time() - self.start) > 65 )):
 			self.off()
 			print("insufficient water level : {} or time out {}:".format(level, (time.time() - self.start)))
 			self.start = None
 			#return "insufficient water level : " + level + "or time out: " + (time.time() - self.start)
 
-		elif (self.status() == False and level < 40 and type == "manual"):
+		elif (self.status() == False and level > 40 and type == "manual"):
 			self.start = time.time()
 			self.on()
 			print("{} - manual watering in progress".format(now))
