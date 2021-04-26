@@ -50,13 +50,14 @@ class ultrasonic:
 			while GPIO.input(self.gpio_echo)==1:
 				stop = time.time()
 			# Calculate the time it took the wave to travel there and back
-			distanceBothWays = measuredTime * 33112 # cm/s in 20 degrees Celsius
+			measuredTime = stop - start
+			# Calculate the travel distance by multiplying the measured time by speed of sound
+			distanceBothWays = measuredTime * 34029 # cm/s in 20 degrees Celsius
 			# Divide the distance by 2 to get the actual distance from sensor to obstacle
 			depth = distanceBothWays / 2
-			if (depth != 0):5
+			if (depth != 0):
 				depth_sum = depth_sum + depth
 				i+=1
-
 		average_depth = (depth_sum / i)
 		return depth
 
