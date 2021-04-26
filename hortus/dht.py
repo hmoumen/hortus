@@ -10,13 +10,13 @@ class dht:
     def humidity(self):
         humidity = Adafruit_DHT.read_retry(22, self.gpio)[0]
         if humidity is not None:
-            return round(humidity, 1)
+            return round(humidity)
         else:
             return 0
     
     def temperature(self):
         temperature = round(Adafruit_DHT.read_retry(22, self.gpio)[1], 1)
         if temperature is not None:
-            return round(temperature, 1)
+            return round(temperature)
         else:
             return 0

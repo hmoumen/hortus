@@ -14,7 +14,7 @@ def status(relay):
     else:
         return "OFF"
 
-def lcd(temp, humidity, filling, relay1, relay2):
+def lcd(temp, humidity, capacity, relay1, relay2):
     # Raspberry Pi pin configuration:
     RST = None     # on the PiOLED this pin isnt used
 
@@ -52,7 +52,7 @@ def lcd(temp, humidity, filling, relay1, relay2):
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
     draw.text((x, top),       "T: " + str(temp) + "°C - H: " + str(humidity) + "%" ,  font=font, fill=255)
-    draw.text((x, top+8),     "Tank: *Depth " + str(round(filling)), font=font, fill=255)
+    draw.text((x, top+8),     "Tank: *Depth " + str(round(capacity)), font=font, fill=255)
     draw.text((x, top+16),    "      *P1: " + status(relay1) + "- *P2:" + status(relay2) , font=font, fill=255)
     # Display image.
     disp.image(image)
