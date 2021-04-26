@@ -51,6 +51,7 @@ class ultrasonic:
 				stop = time.time()
 			# Calculate the time it took the wave to travel there and back
 			measuredTime = stop - start
+			
 			# Divide the distance by 2 to get the actual distance from sensor to obstacle
 			depth = (measuredTime * 34200) / 2
 			if (depth != 0):5
