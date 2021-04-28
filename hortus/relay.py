@@ -12,6 +12,7 @@ class relay:
 		self.off()
 		self.type = "relay"
 		self.start = None
+		self.auto = "enable"
 
 	def on(self):
 		GPIO.output(self.gpio, GPIO.HIGH)
@@ -32,7 +33,7 @@ class relay:
 		#print("status: {} - level: {}".format(self.status(), level))
 		now = datetime.now().strftime("%I:%M %p")
 		
-		if (self.status() == False and level > 40 and whour == now and precip > 50):
+		if (self.auto == "enable" and self.status() == False and level > 40 and whour == now and precip > 50):
 			self.start = time.time()
 			self.on()
 			print("{} - automatic watering in progress".format(now))
